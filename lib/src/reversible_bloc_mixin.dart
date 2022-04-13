@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 
 import 'stack/stack.dart';
 
-mixin ReversibleMixin<Event, State> on BlocBase<State> {
+mixin ReversibleBlocMixin<Event, State> on BlocBase<State> {
   late final Stack<State> _stateStack = Stack();
 
   bool isReverting = false;

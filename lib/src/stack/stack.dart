@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:reversible_bloc/src/stack/stack_exceptions.dart';
+import 'package:reversible_bloc/src/stack/empty_stack_exception.dart';
 
 class Stack<T> {
   final _storage = ListQueue<T>();

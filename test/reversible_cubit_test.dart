@@ -1,7 +1,8 @@
+import 'package:bloc/bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:reversible_bloc/reversible_bloc.dart';
-import 'package:reversible_bloc/src/stack/stack_exceptions.dart';
+import 'package:reversible_bloc/src/stack/empty_stack_exception.dart';
 
 void main() {
   group('Test reversible cubit', () {
@@ -31,7 +32,7 @@ void main() {
   });
 }
 
-class _IntTestCubit extends ReversibleCubit<int> {
+class _IntTestCubit extends Cubit<int> with ReversibleBlocMixin {
   _IntTestCubit(int initialState) : super(initialState);
 
   void increment() => emit(state + 1);
