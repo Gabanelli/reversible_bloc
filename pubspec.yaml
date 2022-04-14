@@ -1,6 +1,6 @@
 name: reversible_bloc
 description: A bloc mixin that enables to rollback states.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/Gabanelli/reversible_bloc
 
 environment:

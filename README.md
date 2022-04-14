@@ -1,13 +1,26 @@
+# reversible_bloc
+
 ![codecov](https://codecov.io/gh/Gabanelli/reversible_bloc/branch/main/graph/badge.svg)
 [![Version](https://img.shields.io/pub/v/reversible_bloc.svg)](https://pub.dev/packages/reversible_bloc) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
 A [Bloc](https://pub.dev/packages/bloc) mixin that enables to revert the bloc / cubit to a previous state.
+
+## Setup
+
+Add dependency to your pubspec.yaml
+```yaml
+dependencies:
+  reversible_bloc : ^0.0.2
+```
+Run `pub get` to install.
 
 ## Usage
 
 To use *reversible_bloc*, you need to import and mix `ReversibleBlocMixin` to your `Bloc` or `Cubit`.
 
 ```dart
+import 'package:reversible_bloc/reversible_bloc.dart';
+
 class MyReversibleCubit extends Cubit<int> with ReversibleBlocMixin {
   MyReversibleCubit(int initialState) : super(initialState);
 
@@ -15,7 +28,7 @@ class MyReversibleCubit extends Cubit<int> with ReversibleBlocMixin {
 }
 ```
 
-Then, when you need to rollback to previous state, you can use `revert()` method.
+Then, when you need to rollback to previous state, you can use `revert()` method. If bloc has no previous state, it will throw an `EmptyStackException`.
 
 ```dart
 final myReversibleCubit = context.read<MyReversibleCubit>();
