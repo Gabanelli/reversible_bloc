@@ -4,16 +4,15 @@ import 'stack/stack.dart';
 
 /// A mixin that enables a `Bloc` or a `Cubit` to revert to previous
 /// state with `revert()` method.
-/// 
+///
 /// Is highly recommended that you use `Equatable` states, because
 /// revert uses a comparision between states.
 mixin ReversibleBlocMixin<Event, State> on BlocBase<State> {
-
   late final Stack<State> _stateStack = Stack();
   State? _isRevertingTo;
 
   /// Reverts to a previous state
-  /// 
+  ///
   /// Throws [EmptyStackException] when the stack has
   /// no previous states
   void revert() {

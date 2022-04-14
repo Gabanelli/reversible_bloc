@@ -1,0 +1,26 @@
+name: reversible_bloc_example
+description: Demonstrates how to use reversible_bloc plugin.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  reversible_bloc:
+    path: ../
+
+  bloc: ^8.0.3
+  equatable: ^2.0.3
+  flutter_bloc: ^8.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
